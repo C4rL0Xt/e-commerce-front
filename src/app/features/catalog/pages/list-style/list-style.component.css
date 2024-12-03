@@ -1,0 +1,47 @@
+.container {
+  padding: 50px;
+}
+
+.subtitle-container {
+  padding-bottom: 10px;
+}
+
+.list-categories {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 40px;
+}
+
+@media (max-width: 1340px) {
+  .list-categories {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+/* Ajustes de la cuadrícula en diferentes resoluciones */
+@media (max-width: 1240px) {
+  .list-categories {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .list-categories {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .list-categories {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+  }
+}
+
+@media (max-width: 480px) {
+  .list-categories {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+}

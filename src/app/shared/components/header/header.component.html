@@ -1,0 +1,66 @@
+
+<header class="header">
+  <div class="header-content">
+    <button class="menu-toggle" (click)="toggleMenu()">☰</button>
+    <div routerLink="/" class="logo">
+      <img src="assets/images/font_logo.png" alt="Logo">
+    </div>
+    <nav class="nav">
+      <div class="nav-option" (mouseenter)="showDropdown('hombre')" (mouseleave)="startHideTimeout()" routerLink="/style/gender">
+        <a>Hombre</a>
+        <img class="nav-icon" src="assets/icons/down.svg">
+      </div>
+      <div class="nav-option" (mouseenter)="showDropdown('mujer')" (mouseleave)="startHideTimeout()" routerLink="/style/gender">
+        <a>Mujer</a>
+        <img class="nav-icon" src="assets/icons/down.svg">
+      </div>
+      <div class="nav-option" (mouseenter)="showDropdown('infantil')" (mouseleave)="startHideTimeout()" routerLink="/style/gender">
+        <a>Infantil</a>
+        <img class="nav-icon" src="assets/icons/down.svg">
+      </div>
+    </nav>
+    <div class="icons">
+      <a routerLink="/favorites" class="icon wish-list">
+        <img src="assets/icons/wish-list.svg" alt="Wishlist">
+      </a>
+      <a routerLink="/cart" class="icon car-shop">
+        <img src="assets/icons/shop-car.svg" alt="Carrito de compras">
+      </a>
+      <a routerLink="/profile" class="icon user">
+        <img src="assets/icons/user.svg" alt="Usuario">
+      </a>
+    </div>
+    <div class="search">
+      <img src="assets/icons/search.svg" alt="Buscar productos">
+      <input type="text" placeholder="Buscar productos" (keyup.enter)="search()">
+    </div>
+  </div>
+  <div class="menu-overlay" [class.active]="menuOpen">
+    <button class="close-menu" (click)="toggleMenu()">
+      <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+    </button>
+    <nav class="mobile-nav">
+      <div class="mobile-nav-option">
+        <a href="#" (click)="toggleMenu()">Hombre
+        </a>
+        <img class="mobile-nav-option-icon" src="assets/icons/down.svg">
+      </div>
+      <div class="mobile-nav-option" (click)="toggleMenu()">
+        <a href="#">Mujer
+        </a>
+        <img class="mobile-nav-option-icon" src="assets/icons/down.svg">
+      </div>
+      <div class="mobile-nav-option" (click)="toggleMenu()">
+        <a href="#">Infantil
+        </a>
+        <img class="mobile-nav-option-icon" src="assets/icons/down.svg">
+      </div>
+      <div class="mobile-nav-option"></div>
+    </nav>
+  </div>
+  <div class="drop-menu" [class.show] = "dropdownVisible"
+  (mouseenter)="cancelHideTimeout()"
+  (mouseleave)="startHideTimeout()">
+    <app-dropdown-menu [contentType]="currentContent"></app-dropdown-menu>
+  </div>
+</header>

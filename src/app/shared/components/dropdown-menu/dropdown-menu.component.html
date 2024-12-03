@@ -1,0 +1,50 @@
+<div class="dropdown-content">
+  <ng-container [ngSwitch]="contentType">
+    <div class="option-container" *ngSwitchCase="'hombre'">
+      <ng-container *ngTemplateOutlet="forMan"></ng-container>
+    </div>
+    <div class="option-container"  *ngSwitchCase="'mujer'">
+      <ng-container *ngTemplateOutlet="forWoman"></ng-container>
+    </div>
+    <div class="option-container" *ngSwitchCase="'infantil'">
+      <ng-container *ngTemplateOutlet="forChildren"></ng-container>
+    </div>
+  </ng-container>
+</div>
+
+<ng-template #forMan>
+  <div *ngIf="styles.length; else noStyles" class="styles-wrapper">
+    <div class="style-container" *ngFor="let style of styles">
+      <p class="style-name"><strong>{{ style.styleName }}</strong></p>
+      <ng-container *ngFor="let type of style.types">
+        <div class="type-name" href="#">{{ type.typeName }}</div>
+      </ng-container>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #forWoman>
+  <div *ngIf="styles.length; else noStyles" class="styles-wrapper">
+    <div class="style-container" *ngFor="let style of styles">
+      <p class="style-name"><strong>{{ style.styleName }}</strong></p>
+      <ng-container *ngFor="let type of style.types">
+        <div class="type-name" href="#">{{ type.typeName }}</div>
+      </ng-container>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #forChildren>
+  <div *ngIf="styles.length; else noStyles" class="styles-wrapper">
+    <div class="style-container" *ngFor="let style of styles">
+      <p class="style-name"><strong>{{ style.styleName }}</strong></p>
+      <ng-container *ngFor="let type of style.types">
+        <div class="type-name" href="#">{{ type.typeName }}</div>
+      </ng-container>
+    </div>
+  </div>
+</ng-template>
+
+<ng-template #noStyles>
+  <p>No hay estilos disponibles</p>
+</ng-template>
