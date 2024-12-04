@@ -13,10 +13,10 @@ const routes: Routes = [
     component: LandingPageComponent
   },
   {
-    path: 'style/gender',
-    component: ListStyleComponent,
+    path: 'style',
+    //component: ListStyleComponent,
     loadChildren: () => import('../catalog/catalog.module').then(m => m.CatalogModule)
-  },
+  }, 
   {
     path: 'cart',
     component: CartComponent,

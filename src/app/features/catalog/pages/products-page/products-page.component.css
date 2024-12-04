@@ -1,0 +1,99 @@
+/* Contenedor principal */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 10px;
+  }
+  
+  /* Título */
+  .title-section {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #fff;
+    border-radius: 2px;
+    border-color: red;
+    border-style: dotted;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Contenido principal */
+  .main-content {
+    display: flex;
+    gap: 20px;
+  }
+  
+  /* Filtros */
+  .filter-section {
+    flex: 1;
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 2px;
+    border-color: navy;
+    border-style: dotted;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Sección de productos */
+  .product-section {
+    flex: 3;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-radius: 2px;
+    border-color: blueviolet;
+    border-style: dotted;
+  }
+  
+  /* Búsqueda */
+  .search-section {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Lista de productos */
+  .product-list-section {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Responsividad */
+  @media (max-width: 768px) {
+    .main-content {
+      flex-direction: column; /* Cambiar a una columna para pantallas pequeñas */
+    }
+  
+    .filter-section {
+      order: 1; /* Opcional: Mover filtros debajo de los productos */
+    }
+  
+    .product-section {
+      order: 2; /* Opcional: Asegurarse de que los productos estén arriba */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .title-section {
+      font-size: 18px; /* Reducir tamaño del texto del título */
+      padding: 8px 0;
+    }
+  
+    .filter-section,
+    .search-section,
+    .product-list-section {
+      padding: 10px; /* Reducir el relleno para pantallas muy pequeñas */
+      font-size: 14px; /* Ajustar el tamaño del texto */
+    }
+  
+    input[type="text"] {
+      width: 100%; /* Asegurarse de que el campo de búsqueda ocupe todo el espacio */
+      padding: 8px;
+      font-size: 14px;
+    }
+  }

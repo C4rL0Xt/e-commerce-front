@@ -7,4 +7,12 @@ import { Component } from '@angular/core';
 })
 export class ProductsPageComponent {
 
+  constructor() { 
+    this.sendMessage();
+  }
+
+  sendMessage() {
+    console.log('Sending message');
+  }
+
 }

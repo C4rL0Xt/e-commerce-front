@@ -8,11 +8,12 @@ import { ListStyleComponent } from './pages/list-style/list-style.component';
 import { CardCategoryComponent } from './components/card-category/card-category.component';
 
 
+
 @NgModule({
   declarations: [
     ProductsPageComponent,
     ListStyleComponent,
-    CardCategoryComponent
+    CardCategoryComponent,
   ],
   imports: [
     CommonModule,
