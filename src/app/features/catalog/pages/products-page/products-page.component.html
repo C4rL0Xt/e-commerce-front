@@ -1,29 +1,67 @@
 <!-- Component: ProductsPageComponent -->
 <div class="container">
-    <div class="title-section">
+    <div class="title-section"> 
         <p class="style-selected">NOMBRE ESTILO</p>
     </div>
     <div class="main-content">
         <!-- Filtros -->
         <div class="filter-section">
-          <h2>Filtros</h2>
+          <app-filter-card
+          [title]="'Categorias'"
+          [type]="'category'"
+          ></app-filter-card>
+          <app-filter-card
+          [title]="'Tallas'"
+          [type]="'sizes'"
+          ></app-filter-card>
+          <app-filter-card
+          [title]="'Color'"
+          [type]="'colors'"
+          ></app-filter-card>
+          <app-filter-card
+          [title]="'Material'"
+          [type]="'material'"
+          ></app-filter-card>
+          <app-filter-card
+          [title]="'Temporada'"
+          [type]="'temporada'"
+          ></app-filter-card>
+          <app-filter-card
+          [title]="'Precio'"
+          [type]="'precio'"
+          ></app-filter-card>
         </div>
     
         <!-- Productos -->
         <div class="product-section">
           <!-- Búsqueda -->
           <div class="search-section">
-            <h2>Buscar</h2>
-            <input 
-              type="text" 
-              placeholder="Buscar productos..." 
-            />
+            <button class="filter-menu" (click)="toggleMenu()">
+              <img src="assets/icons/filter.svg" alt="Filtrar">
+            </button>
+            <div class="quantity">
+              #Cantidad
+            </div>
+            <div class="order">
+              Ordenar
+            </div>
           </div>
     
           <!-- Lista de productos -->
           <div class="product-list-section">
-            <h2>Lista de productos</h2>
+            <app-product-card></app-product-card>
+            <app-product-card></app-product-card>
+            <app-product-card></app-product-card>
+            <app-product-card></app-product-card>
+            <app-product-card></app-product-card>
+            <app-product-card></app-product-card>
           </div>
         </div>
-      </div>
+    </div>
+    <div class="menu-overlay" [class.active]="menuOpen">
+      <button class="close-menu" (click)="toggleMenu()">
+        <svg class="close-icon" xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+      </button>
+      TUs filtros
+    </div>
 </div>

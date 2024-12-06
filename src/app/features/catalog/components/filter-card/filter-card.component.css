@@ -1,0 +1,173 @@
+.container {
+    transition: height 0.8s ease, opacity 0.3s ease;
+    width: 300px; /* Ancho fijo */
+    transition: all 0.3s ease;
+    overflow: hidden;
+    padding: 10px;
+}
+  
+.container.collapsed {
+    height: 30px; /* Altura cuando está minimizado */
+}
+  
+.container.expanded {
+    height: auto; /* Ajusta la altura según el contenido */
+ }
+
+  
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+  
+.title {
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-size: 1em;
+    font-weight: bold;
+    margin: 0;
+}
+  
+.toggle-button {
+    padding: 5px 0px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+  
+.content {
+    transition: height 0.3s ease, opacity 0.3s ease;
+}
+  
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+.container.expanded .content {
+  animation: slideDown 0.3s ease;
+}
+
+.container.collapsed .content {
+  animation: slideUp 0.3s ease;
+}
+
+
+ /* Contenedor del checkbox */
+.checkbox-container {
+  display: flex;
+  align-items: center; /* Alinea checkbox y texto verticalmente */
+  gap: 10px; /* Espaciado entre el checkbox y el texto */
+  position: relative;
+  margin-bottom: 15px; /* Espacio entre opciones */
+  cursor: pointer;
+  font-family: "Schibsted Grotesk", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-size: 14px; /* Tamaño de fuente */
+  color: #333;
+  line-height: 1.2; /* Mejora la legibilidad */
+}
+
+/* Ocultar el checkbox original */
+.checkbox-container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Checkmark estilo moderno */
+.checkmark {
+  height: 20px;
+  width: 20px;
+  background-color: #f0f0f0;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  flex-shrink: 0; /* Asegura que el checkmark no se reduzca de tamaño */
+}
+
+/* Hover en checkmark */
+.checkbox-container:hover .checkmark {
+  background-color: #e9ecef;
+  border-color: #007bff;
+}
+
+/* Checkmark marcado */
+.checkbox-container input:checked ~ .checkmark {
+  background-color: #007bff;
+  border-color: #007bff;
+  box-shadow: 0 2px 6px rgba(0, 123, 255, 0.4);
+}
+
+/* Animación al estar marcado */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.checkbox-container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.checkmark:after {
+  left: 6px;
+  top: 2px;
+  width: 6px;
+  height: 12px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* Accesibilidad: resaltar con focus */
+.checkbox-container input:focus ~ .checkmark {
+  outline: 2px solid #80bdff;
+  outline-offset: 2px;
+}
+
+.color-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.color-box {
+  width: 40px;
+  height: 40px;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.2s, border 0.2s;
+}
+
+.color-box:hover {
+  transform: scale(1.1);
+}
+
+.color-box.selected {
+  border: 2px solid black;
+}
+
+  
+  

@@ -1,22 +1,20 @@
 /* Contenedor principal */
 .container {
-    max-width: 1200px;
+    max-width: 1300px;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     gap: 20px;
     padding: 10px;
+    margin-top: 60px;
+
   }
   
   /* Título */
   .title-section {
-    text-align: center;
-    padding: 10px 0;
+    text-align: left;
+    padding: 10px 10px;
     background-color: #fff;
-    border-radius: 2px;
-    border-color: red;
-    border-style: dotted;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
   /* Contenido principal */
@@ -27,12 +25,12 @@
   
   /* Filtros */
   .filter-section {
+    display: flex;
+    flex-direction: column;
     flex: 1;
     background-color: #fff;
     padding: 15px;
-    border-radius: 2px;
-    border-color: navy;
-    border-style: dotted;
+    row-gap: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
@@ -42,17 +40,15 @@
     display: flex;
     flex-direction: column;
     gap: 15px;
-    border-radius: 2px;
-    border-color: blueviolet;
-    border-style: dotted;
   }
   
   /* Búsqueda */
   .search-section {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
     background-color: #fff;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
   }
   
   /* Lista de productos */
@@ -61,6 +57,47 @@
     padding: 15px;
     border-radius: 5px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    row-gap: 20px;
+    column-gap: 10px;
+  }
+
+  /*filter menu*/
+  .filter-menu {
+    display: none;
+    font-size: 1.5rem;
+    background: none; 
+    border: none;
+    cursor: pointer;
+  }
+
+  .menu-overlay {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 40%;
+    height: 100%;
+    background-color: #fff;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.5);
+    transition: left 0.3s ease;
+    z-index: 1000;
+    padding-top: 60px;
+  }
+
+  .close-menu {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    border: none;
+    background-color: #fff;
+  }
+  
+  .close-icon:hover {
+    color: red;
   }
   
   /* Responsividad */
@@ -70,7 +107,16 @@
     }
   
     .filter-section {
-      order: 1; /* Opcional: Mover filtros debajo de los productos */
+      /* order: 1; Opcional: Mover filtros debajo de los productos */
+      display: none; /* Ocultar filtros en pantallas pequeñas */
+    }
+
+    .filter-menu {
+      display: block; /* Mostrar el botón de menú en móviles */
+    }
+
+    .menu-overlay.active {
+      left: 0;
     }
   
     .product-section {

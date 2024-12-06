@@ -7,12 +7,19 @@ import { Component } from '@angular/core';
 })
 export class ProductsPageComponent {
 
+  menuOpen = false;
+  
+
   constructor() { 
     this.sendMessage();
   }
 
   sendMessage() {
     console.log('Sending message');
+  }
+
+  toggleMenu(): void {
+    this.menuOpen = !this.menuOpen;
   }
 
 }

@@ -6,6 +6,8 @@ import { SharedModule } from '../../shared/shared.module';
 import { ProductsPageComponent } from './pages/products-page/products-page.component';
 import { ListStyleComponent } from './pages/list-style/list-style.component';
 import { CardCategoryComponent } from './components/card-category/card-category.component';
+import { FilterCardComponent } from './components/filter-card/filter-card.component';
+import { ProductCardComponent } from './components/product-card/product-card.component';
 
 
 
@@ -14,6 +16,8 @@ import { CardCategoryComponent } from './components/card-category/card-category.
     ProductsPageComponent,
     ListStyleComponent,
     CardCategoryComponent,
+    FilterCardComponent,
+    ProductCardComponent,
   ],
   imports: [
     CommonModule,

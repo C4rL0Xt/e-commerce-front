@@ -1,0 +1,108 @@
+<!--componente filter card-->
+<div [ngClass]="{ 'expanded': expanded, 'collapsed': !expanded }" class="container">
+    <div class="header">
+      <P class="title">{{title}}</P>
+      <div class="toggle-button" (click)="toggleSize()">
+        <img *ngIf="expanded" src="assets/icons/arrow-up.svg" alt="">
+        <img *ngIf="!expanded" src="assets/icons/arrow-down.svg" alt="">
+      </div>
+    </div>
+    <div class="content">
+      <div *ngIf="expanded">
+        <ng-container [ngSwitch]="type">
+          <ng-container *ngSwitchCase="'category'">
+            <ng-container *ngTemplateOutlet="filterCategory"></ng-container>
+          </ng-container>
+          <ng-container *ngSwitchCase="'sizes'">
+            <ng-container *ngTemplateOutlet="filterSizes"></ng-container>
+          </ng-container>
+          <ng-container *ngSwitchCase="'colors'">
+            <ng-container *ngTemplateOutlet="filterColor"></ng-container>
+          </ng-container>
+          <ng-container *ngSwitchCase="'material'">
+            <ng-container *ngTemplateOutlet="filterMaterial"></ng-container>
+          </ng-container>
+          <ng-container *ngSwitchCase="'temporada'">
+            <ng-container *ngTemplateOutlet="filterTemporada"></ng-container>
+          </ng-container>
+          <ng-container *ngSwitchCase="'precio'">
+            <ng-container *ngTemplateOutlet="filterPrecio"></ng-container>
+          </ng-container>
+        </ng-container>
+      </div>
+    </div>
+</div>
+
+<ng-template #filterCategory>
+  <form>
+    <div *ngFor="let category of categories">
+      <label class="checkbox-container">
+        <input type="checkbox" name="category" [value]="category">
+        <span class="checkmark"></span>
+        {{ category }}
+      </label>
+    </div>
+  </form>  
+</ng-template>
+
+<ng-template #filterSizes>
+  <form>
+    <div *ngFor="let size of sizes">
+      <label class="checkbox-container">
+        <input type="checkbox" name="size" [value]="size">
+        <span class="checkmark"></span>
+        {{ size }}
+      </label>
+    </div>
+</form>
+</ng-template>
+
+<ng-template #filterColor>
+  <div class="color-container">
+    <div 
+      *ngFor="let color of colors" 
+      class="color-box" 
+      [ngStyle]="{ 'background-color': color }" 
+      [class.selected]="color === selectedColor"
+      (click)="selectColor(color)">
+    </div>
+  </div>
+  <p>Color seleccionado: <span [style.color]="selectedColor">{{ selectedColor }}</span></p>
+</ng-template>
+
+<ng-template #filterMaterial>
+  <form>
+      <div *ngFor="let material of materials">
+        <label class="checkbox-container">
+          <input type="checkbox" name="material" [value]="material">
+          <span class="checkmark"></span>
+          {{ material }}
+        </label>
+      </div>
+  </form>
+</ng-template>
+
+<ng-template #filterTemporada>
+  <form>
+    <div *ngFor="let season of seasons">
+      <label class="checkbox-container">
+        <input type="checkbox" name="season" [value]="season">
+        <span class="checkmark"></span>
+        {{ season }}
+      </label>
+    </div>
+  </form>
+</ng-template>
+
+<ng-template #filterPrecio>
+  <form>
+      <div *ngFor="let price of prices">
+        <label class="checkbox-container">
+          <input type="checkbox" name="price" [value]="price">
+          <span class="checkmark"></span>
+          {{ price }}
+        </label>
+      </div>
+  </form>
+</ng-template>
+  
