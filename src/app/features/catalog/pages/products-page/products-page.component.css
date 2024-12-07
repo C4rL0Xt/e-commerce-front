@@ -60,9 +60,10 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
-    row-gap: 20px;
-    column-gap: 10px;
+    row-gap: 30px;
+    column-gap: 1px;
   }
+
 
   /*filter menu*/
   .filter-menu {
@@ -98,6 +99,18 @@
   
   .close-icon:hover {
     color: red;
+  }
+
+  .quantity {
+    font-family: "Schibsted Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+    font-weight: bold;
+  }
+
+  .separator {
+    border: 1px solid #eeebf0;
+
   }
   
   /* Responsividad */

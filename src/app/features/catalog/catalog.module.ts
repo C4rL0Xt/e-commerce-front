@@ -8,6 +8,7 @@ import { ListStyleComponent } from './pages/list-style/list-style.component';
 import { CardCategoryComponent } from './components/card-category/card-category.component';
 import { FilterCardComponent } from './components/filter-card/filter-card.component';
 import { ProductCardComponent } from './components/product-card/product-card.component';
+import { ProductDetailComponent } from './pages/product-detail/product-detail.component';
 
 
 
@@ -18,6 +19,7 @@ import { ProductCardComponent } from './components/product-card/product-card.com
     CardCategoryComponent,
     FilterCardComponent,
     ProductCardComponent,
+    ProductDetailComponent,
   ],
   imports: [
     CommonModule,

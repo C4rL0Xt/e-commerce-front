@@ -1,13 +1,13 @@
 <div class="product-card-container">
-    <div class="image-container">
-        <img class="image" src="assets/images/product-test.jpg" alt="">
+    <div class="image-container" [routerLink]="['/style/product/details',1]">
+        <img class="image" src={{product.image}}>
     </div>
     <div class="data-container">
-        <div class="name-product">
-            Polo rosado manga larga
+        <div class="name-product" [routerLink]="['/style/product/details',1]">
+            {{product.description}}
         </div>
         <div class="price-product">
-            S/ 51.00
+            {{product.price | currency}}
         </div>
     </div>
 </div>

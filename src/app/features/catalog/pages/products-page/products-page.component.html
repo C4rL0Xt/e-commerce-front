@@ -10,22 +10,27 @@
           [title]="'Categorias'"
           [type]="'category'"
           ></app-filter-card>
+          <div class="separator"></div>
           <app-filter-card
           [title]="'Tallas'"
           [type]="'sizes'"
           ></app-filter-card>
+          <div class="separator"></div>
           <app-filter-card
           [title]="'Color'"
           [type]="'colors'"
           ></app-filter-card>
+          <div class="separator"></div>
           <app-filter-card
           [title]="'Material'"
           [type]="'material'"
           ></app-filter-card>
+          <div class="separator"></div>
           <app-filter-card
           [title]="'Temporada'"
           [type]="'temporada'"
           ></app-filter-card>
+          <div class="separator"></div>
           <app-filter-card
           [title]="'Precio'"
           [type]="'precio'"
@@ -40,7 +45,7 @@
               <img src="assets/icons/filter.svg" alt="Filtrar">
             </button>
             <div class="quantity">
-              #Cantidad
+              {{quantityProducts}} productos
             </div>
             <div class="order">
               Ordenar
@@ -49,12 +54,10 @@
     
           <!-- Lista de productos -->
           <div class="product-list-section">
-            <app-product-card></app-product-card>
-            <app-product-card></app-product-card>
-            <app-product-card></app-product-card>
-            <app-product-card></app-product-card>
-            <app-product-card></app-product-card>
-            <app-product-card></app-product-card>
+            <div class="product-item" *ngFor="let product of listProducts">
+              <app-product-card [product]="product"></app-product-card>
+
+            </div>
           </div>
         </div>
     </div>
