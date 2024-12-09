@@ -17,7 +17,7 @@
     <div class="style-container" *ngFor="let style of styles">
       <p class="style-name"><strong>{{ style.styleName }}</strong></p>
       <ng-container *ngFor="let type of style.types">
-        <div class="type-name" href="#">{{ type.typeName }}</div>
+        <div class="type-name" [routerLink]="['/style/products',1]">{{ type.typeName }}</div>
       </ng-container>
     </div>
   </div>
@@ -28,7 +28,7 @@
     <div class="style-container" *ngFor="let style of styles">
       <p class="style-name"><strong>{{ style.styleName }}</strong></p>
       <ng-container *ngFor="let type of style.types">
-        <div class="type-name" href="#">{{ type.typeName }}</div>
+        <div class="type-name" [routerLink]="['/style/products',1]">{{ type.typeName }}</div>
       </ng-container>
     </div>
   </div>
@@ -39,7 +39,7 @@
     <div class="style-container" *ngFor="let style of styles">
       <p class="style-name"><strong>{{ style.styleName }}</strong></p>
       <ng-container *ngFor="let type of style.types">
-        <div class="type-name" href="#">{{ type.typeName }}</div>
+        <div class="type-name" [routerLink]="['/style/products',1]">{{ type.typeName }}</div>
       </ng-container>
     </div>
   </div>

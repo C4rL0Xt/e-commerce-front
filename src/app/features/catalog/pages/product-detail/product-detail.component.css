@@ -61,13 +61,18 @@
 }
 
 .name-product {
+    font-family: "Schibsted Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
     font-size: 2rem;
     font-weight: 700;
-    text-transform: uppercase;
     text-align: center;
 }
 
 .price-product {
+    font-family: "Schibsted Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
     font-size: 1.8rem;
     color: #e74c3c;
     font-weight: bold;
@@ -78,24 +83,41 @@
 .other-colors, .sizes-products, .details {
     margin-top: 20px; /* Reduce el margen superior */
 }
+
 .color-options {
     display: flex;
     gap: 10px;
     margin-top: 10px;
 }
 
+.other-colors h3 {
+    font-family: "Schibsted Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+  
 .color-options div {
     width: 30px;
     height: 30px;
     border: 2px solid #ddd;
     border-radius: 5px;
     cursor: pointer;
+    font-family: "Schibsted Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
     transition: transform 0.2s ease, border-color 0.3s ease;
 }
-
+  
+  /* Estilo al pasar el cursor */
 .color-options div:hover {
     transform: scale(1.1);
     border-color: #3498db;
+}
+  
+  /* Estilo para el color seleccionado */
+.color-options div.selected {
+    border-color: #3498db;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
 .sizes-products p {
@@ -103,8 +125,14 @@
     gap: 10px;
     flex-wrap: wrap;
     margin: 10px 0;
-}
+  }
 
+.sizes-products h3 {
+    font-family: "Schibsted Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
+}
+  
 .sizes-products p span {
     display: inline-flex;
     justify-content: center;
@@ -113,18 +141,26 @@
     height: 40px;
     border: 2px solid #ddd;
     border-radius: 5px;
+    font-family: "Schibsted Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
     font-size: 1rem;
     font-weight: bold;
     background-color: #f8f9fa;
     cursor: pointer;
-    transition: transform 0.2s ease, border-color 0.3s ease;
+    transition: transform 0.2s ease, border-color 0.3s ease, background-color 0.3s ease;
 }
-
+  
 .sizes-products p span:hover {
     transform: scale(1.1);
     border-color: #3498db;
 }
-
+  
+  /* Estilo para la opción seleccionada */
+.sizes-products p span.selected {
+    border-color: #3498db;
+    background-color: #eaf4fc;
+}
 
 .buttons {
     display: flex;
@@ -134,9 +170,11 @@
 
 button {
     padding: 12px 25px;
+    font-family: "Schibsted Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
     font-size: 1rem;
     font-weight: 700;
-    text-transform: uppercase;
     border: none;
     border-radius: 25px;
     cursor: pointer;
@@ -145,56 +183,65 @@ button {
 }
 
 .add-to-cart {
-    background-color: #28a745;
+    background-color: #000000;
+    display: flex;
+    justify-content: center;
 }
 
 .add-to-cart:hover {
-    background-color: #218838;
+    background-color: #393636;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .add-to-wish {
-    background-color: #6f42c1;
+    background-color: #e98282;
 }
 
 .add-to-wish:hover {
-    background-color: #563d7c;
+    background-color: #d54d4d;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .details h3 {
+    font-family: "Schibsted Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
     font-size: 1.3rem;
     margin-bottom: 10px;
 }
 
 .details p {
+    font-family: "Schibsted Grotesk", sans-serif;
+    font-optical-sizing: auto;
+    font-style: normal;
     font-size: 1rem;
     line-height: 1.5;
     color: #555;
 }
 
 
-
 .similar-products {
-    background-color: white;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 10px;
 }
-
+  
 .similar-products h2 {
-    font-size: 1.5rem;
-    margin-bottom: 15px;
+    margin-bottom: 10px;
+    font-size: 1.2rem;
 }
-
-.product-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  
+.product-carousel {
+    display: flex;
     gap: 20px;
-    list-style: none;
+    overflow-x: auto;
+    padding: 10px;
+    border: 1px solid rebeccapurple;
+    border-radius: 5px;
+    scroll-behavior: smooth;
 }
-
+  
 .product-item {
+    flex: 0 0 auto; /* Evita que los elementos se reduzcan */
+    min-width: 150px;
     background-color: #f0f0f0;
     padding: 10px;
     border-radius: 5px;
@@ -204,10 +251,19 @@ button {
     transition: transform 0.3s ease;
     cursor: pointer;
 }
-
+  
 .product-item:hover {
     transform: scale(1.05);
     background-color: #e9ecef;
+}
+  
+.product-carousel::-webkit-scrollbar {
+    height: 8px;
+}
+  
+.product-carousel::-webkit-scrollbar-thumb {
+    background-color: rebeccapurple;
+    border-radius: 5px;
 }
 
 @media screen and (max-width: 768px) {
